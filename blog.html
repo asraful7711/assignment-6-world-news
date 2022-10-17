@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogs</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <section class="w-3/4 mx-auto rounded-sm bg-slate-200 p-6">
+        <h1 class="text-3xl font-extrabold">QUESTIONS</h1>
+        <div class="bg-slate-200 mb-4 ">
+            <h2 class="text-xl font-bold text-blue-600">1.Deference between var let and const</h2>
+            <p class="text-lg font-medium">A variable declaration is simply telling the computer that a variable
+                exists and what value it should
+                start
+                with. Similar to other programming languages JavaScript also allows for the declaration of variables.
+
+                There are three keywords in JavaScript that can be used to declare variables: let, var, and const. Each
+                keyword has different rules and implications for how the variables they create can be used.
+
+                let: The let keyword declares a block-scoped local variable, optionally initializing it to a value.
+                Block-scoped means that the variable is only available within the block it was declared in, which is
+                usually
+                denoted by curly braces {}.
+
+                var: The var keyword declares a function-scoped or global variable, optionally initializing it to a
+                value.
+                Function-scoped means that the variable is only available within the function it was declared in. Global
+                variables are available throughout your entire code.
+                ADVERTISEMENT
+
+                const: The const keyword declares a block-scoped, immutable constant variable, i.e. a variable that
+                can’t be
+                reassigned.
+                Constants are also called “immutable variables”, but that’s a bit of a misnomer since they are actually
+                variables – just ones that can’t be reassigned.</p>
+        </div>
+        <div class="bg-slate-200 mb-4 ">
+            <h2 class="text-xl font-bold text-blue-600">2.Difference between arrow function and normal function</h2>
+            <p class="text-lg font-medium">Arrow function — also called fat arrow function— is a new feature introduced
+                in ES6 that is a more concise syntax for writing function expressions. While both regular JavaScript
+                functions and arrow functions work in a similar manner, there are certain differences between them.
+
+                The arrow function example above allows a developer to accomplish the same result with fewer lines of
+                code and approximately half the typing.
+                // (param1, param2, paramN) => expression
+                // ES5
+                var add = function(x, y) {
+                return x + y;
+                };
+                // ES6
+                let add = (x, y) => { return x + y };
+
+                Curly brackets aren’t required if only one expression is present. The above example can also be written
+                like this:let add = (x, y) => x + y;
+            </p>
+        </div>
+        <div class="bg-slate-200 mb-4 ">
+            <h2 class="text-xl font-bold text-blue-600">3.difference between map, foreach and find in javascript</h2>
+            <p class="text-lg font-medium"><span>
+                    1. Foreach
+                    The easy one right ? we all know why this method is used for and even you don’t know about this
+                    method the name pretty much explains everything.
+
+                    Foreach takes a callback function and run that callback function on each element of array one by
+                    one.
+                </span>
+                <span>
+                    2. Filter
+                    Whenever you have to filter an array Javascript inbuilt method to filter your array is the right
+                    choice to use. Filter let you provide a callback for every element and returns a filtered array.
+
+                    The main difference between forEach and filter is that forEach just loop over the array and executes
+                    the callback but filter executes the callback and check its return value. If the value is true
+                    element remains in the resulting array but if the return value is false the element will be removed
+                    for the resulting array.
+                </span>
+                <span>
+                    3. Map
+                    One of my favourite and most used array method of all time. As a ReactJS developer I use map a lot
+                    inside my application UI.
+
+                    Map like filter & foreach takes a callback and run it against every element on the array but whats
+                    makes it unique is it generate a new array based on your existing array.
+                </span>
+            </p>
+        </div>
+        <div class="bg-slate-200 mb-4 ">
+            <h2 class="text-xl font-bold text-blue-600">3.Why use template string</h2>
+            <p class="text-lg font-medium">You can use template strings to write your string exactly how you want it to
+                appear, without all the quotation marks and confusion. Template strings make it very easy to spot a
+                missing space and make your string more readable.
+            </p>
+        </div>
+    </section>
+</body>
+
+</html>

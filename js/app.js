@@ -45,7 +45,7 @@ const displayCategories = categories => {
 const allNews = async (catagoryId) => {
     // spinner start 
     toggleSpinner(true)
-    console.log(catagoryId);
+    // console.log(catagoryId);
     try {
         url = `https://openapi.programming-hero.com/api/news/category/${catagoryId}`
         res = await fetch(url);
@@ -61,7 +61,7 @@ const allNews = async (catagoryId) => {
 
 // display all news in card
 const displayAllNews = (allNews) => {
-    console.log(allNews)
+    // console.log(allNews)
     const newsCountSection = document.getElementById('main-part');
     if (allNews.length !== 0) {
         newsCountSection.innerText = `${allNews.length} items found in this category `
@@ -73,7 +73,7 @@ const displayAllNews = (allNews) => {
     const newsField = document.getElementById('news-field');
     newsField.innerHTML = ''
     allNews.forEach(news => {
-        console.log(news)
+        // console.log(news)
         const div = document.createElement('div');
         div.innerHTML = `
         
