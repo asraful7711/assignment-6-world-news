@@ -61,8 +61,16 @@ const allNews = async (catagoryId) => {
 
 // display all news in card
 const displayAllNews = (allNews) => {
+    console.log(allNews)
+    // allNews.length ? allNews : document.getElementById('main-part').innerText = 'no data found';
+    const newsCountSection = document.getElementById('main-part');
+    if (allNews.length !== 0) {
+        newsCountSection.innerText = `${allNews.length} items found in this category `
 
-    // console.log(allNews)
+    }
+    else {
+        newsCountSection.innerText = 'No data found in this category '
+    }
     const newsField = document.getElementById('news-field');
     newsField.innerHTML = ''
     allNews.forEach(news => {
@@ -71,16 +79,16 @@ const displayAllNews = (allNews) => {
         div.innerHTML = `
         
         <div class="card lg:card-side bg-base-100 shadow-xl p-6">
-                <figure><img class=" lg:h-[300px] lg:w-[300px]" src="${news.image_url}" alt="Album" /></figure>
+                <figure><img class=" lg:h-[300px] lg:w-[300px]" src="${news?.image_url}" alt="Album" /></figure>
             <div class="card-body pb-0 pt-2">
-                    <h2 class="card-title text-xl font-bold mb-7">${news.title}</h2>
-                    <p class="text-lg text-gray-500"> ${news.details.substring(0, 250)}... </p>
+                    <h2 class="card-title text-xl font-bold mb-7">${news?.title}</h2>
+                    <p class="text-lg text-gray-500"> ${news?.details.substring(0, 250)}... </p>
                 <div class="flex justify-between">
                     <div class="flex items-center">
-                         <img class="w-14 rounded-full mr-3" src="${news.author.img}" />
+                         <img class="w-14 rounded-full mr-3" src="${news?.author.img}" />
                         <div> 
-                            <p class="font-medium text-gray-500"> ${news.author?.name ? news.author?.name : 'NO DATA'}</p>
-                            <p class="font-medium text-gray-500"> ${news.author?.published_date ? news.author?.published_date : 'NO date'}</p>
+                            <p class="font-medium text-gray-500"> ${news?.author?.name ? news.author?.name : 'NO DATA'}</p>
+                            <p class="font-medium text-gray-500"> ${news?.author?.published_date ? news.author?.published_date : 'NO date'}</p>
 
                         </div>
                     </div>
@@ -89,7 +97,7 @@ const displayAllNews = (allNews) => {
                     </div>
                     <div class=" justify-end">
                         
-                        <label onclick="individualNews('${news._id}')" for="my-modal-3" class="btn btn btn-active"><i class="fa-solid fa-arrow-right"></i></label>
+                        <label onclick="individualNews('${news?._id}')" for="my-modal-3" class="btn btn btn-active"><i class="fa-solid fa-arrow-right"></i></label>
                     </div>
                     
                 </div>
