@@ -62,7 +62,6 @@ const allNews = async (catagoryId) => {
 // display all news in card
 const displayAllNews = (allNews) => {
     console.log(allNews)
-    // allNews.length ? allNews : document.getElementById('main-part').innerText = 'no data found';
     const newsCountSection = document.getElementById('main-part');
     if (allNews.length !== 0) {
         newsCountSection.innerText = `${allNews.length} items found in this category `
