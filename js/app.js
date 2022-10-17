@@ -10,6 +10,18 @@ const allNewsCategories = async () => {
         console.log(error);
     }
 }
+// spinner  function
+const toggleSpinner = isLoading => {
+    const spinningSection = document.getElementById('spinner');
+    if (isLoading) {
+        spinningSection.classList.remove('hidden');
+    }
+    else {
+        spinningSection.classList.add('hidden');
+    }
+}
+
+
 allNewsCategories()
 //display all categories
 const displayCategories = categories => {
@@ -24,10 +36,15 @@ const displayCategories = categories => {
         categoriesSection.appendChild(li)
 
     });
+
+
+
 }
 
 
 const allNews = async (catagoryId) => {
+    // spinner start 
+    toggleSpinner(true)
     console.log(catagoryId);
     try {
         url = `https://openapi.programming-hero.com/api/news/category/${catagoryId}`
@@ -39,10 +56,12 @@ const allNews = async (catagoryId) => {
     catch (error) {
         console.log(error);
     }
+
 }
 
 // display all news in card
 const displayAllNews = (allNews) => {
+
     // console.log(allNews)
     const newsField = document.getElementById('news-field');
     newsField.innerHTML = ''
@@ -80,8 +99,11 @@ const displayAllNews = (allNews) => {
         `
 
         newsField.appendChild(div);
-    })
 
+    })
+    // spinner stop 
+
+    toggleSpinner(false)
 
 }
 //view all data in a modal
@@ -103,7 +125,6 @@ const modalDiv = document.createElement('div');
 const viewFullNews = (singleData) => {
     console.log(singleData)
     const modalSection = document.getElementById('modal-section')
-    // modalSection.innerHTML = '';
     modalDiv.classList.add('modal')
     modalDiv.innerHTML = `
                 <div class="modal-box w-full relative">
