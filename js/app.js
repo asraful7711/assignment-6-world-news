@@ -10,6 +10,7 @@ const allNewsCategories = async () => {
         console.log(error);
     }
 }
+allNewsCategories()
 
 const displayCategories = categories => {
     // console.log(categories)
@@ -24,7 +25,7 @@ const displayCategories = categories => {
 
     });
 }
-allNewsCategories()
+
 
 const allNews = async (newsid) => {
     console.log(newsid);
@@ -50,18 +51,29 @@ const displayAllNews = (allNews) => {
         
         <div class="card lg:card-side bg-base-100 shadow-xl p-6">
                 <figure><img class=" lg:h-[300px] lg:w-[300px]" src="${news.image_url}" alt="Album" /></figure>
-                <div class="card-body">
-                    <h2 class="card-title text-xl font-bold">${news.title}</h2>
+            <div class="card-body pb-0 pt-2">
+                    <h2 class="card-title text-xl font-bold mb-7">${news.title}</h2>
                     <p class="text-lg text-gray-500"> ${news.details.substring(0, 250)}... </p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary">Listen</button>
-                    </div>
-                    <div class="w-10 rounded-full">
-                        <img src="" />
-                    </div>
+                <div class="flex justify-between">
+                    <div class="flex items-center">
+                         <img class="w-14 rounded-full mr-3" src="${news.author.img}" />
+                        <div> 
+                            <p class="font-medium text-gray-500"> ${news.author?.name ? news.author?.name : 'NO DATA'}</p>
+                            <p class="font-medium text-gray-500"> ${news.author?.published_date ? news.author?.published_date : 'NO date'}</p>
 
+                        </div>
+                    </div>
+                    <div class="flex items-center font-medium text-gray-500"> 
+                        <p><i class="fa-solid fa-eye"></i> ${news?.total_view ? news.total_view : 'NO VIEWS'} </p>
+                    </div>
+                    <div class=" justify-end">
+                        <button class="btn btn-active"><i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                    
                 </div>
+
             </div>
+        </div>
         `
 
         newsField.appendChild(div);
